@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Point;
 import android.graphics.PointF;
 import android.os.Handler;
 import android.os.Message;
@@ -153,7 +154,7 @@ public class CustomWaveView extends View {
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                pointF1.x = (float)animation.getAnimatedValue();
+                pointF1.x = Float.valueOf(animation.getAnimatedValue().toString());
                 pointF2 = new PointF(pointF1.x + mWidth / 2, mWaterHeight);
                 pointF3 = new PointF(pointF2.x + mWidth / 2, mWaterHeight);
                 pointF4 = new PointF(pointF3.x + mWidth / 2, mWaterHeight);
